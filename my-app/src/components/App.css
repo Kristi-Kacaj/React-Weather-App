@@ -12,8 +12,8 @@ header {
   background-color: #0391ff;
   text-align: center;
   font-size: 35px;
-  color: #EEFC77;
-  margin-bottom: 20px;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .logo {
@@ -22,15 +22,13 @@ header {
 
 nav {
   float: left;
-  width: 40%;
-  height: 300px; 
+  width:74%;
+  margin-right:1%;
+  height: 450px; 
   background-image: url("navbackground.png");
   background-color: #0391ff;
-  padding: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  color: #EEFC77;
+  padding: 5px;
+  color: white;
   opacity: 0.7;
 }
 
@@ -41,16 +39,17 @@ nav ul {
 }
 
 article {
-  float: left;
-  padding: 20px;
-  width: 60%;
+  float: right;
+  padding: 5px;
+  width: 25%;
   background-color: #0391ff;
-  height: 300px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  color: #EEFC77;
+  height: 450px;
+ color: white;
   background-image: url("articlebackground.png");
+  margin-left: 0px;
+
+  
+
 }
 
 section:after {
@@ -65,8 +64,9 @@ footer {
   background-color: #0391ff;
   padding: 25px;
   text-align: center;
-  color: #EEFC77;
-  margin-top: 25px;
+  color: white;
+  margin-top: 10px;
+  height: 300px;
 
 }
 
