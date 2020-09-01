@@ -3,31 +3,35 @@
 }
 
 body {
- 
+ background-color: #004e8a;
 }
 
 
 header {
+  background-image: url("headerbackground.png");
   background-color: #0391ff;
   text-align: center;
   font-size: 35px;
   color: #EEFC77;
+  margin-bottom: 20px;
 }
 
 .logo {
-  text-align:left
+  text-align: left;
 }
 
 nav {
   float: left;
   width: 40%;
   height: 300px; 
-  background: #0391ff;
+  background-image: url("navbackground.png");
+  background-color: #0391ff;
   padding: 20px;
   border-style: solid;
   border-width: 1px;
   border-color: white;
   color: #EEFC77;
+  opacity: 0.7;
 }
 
 
@@ -46,6 +50,7 @@ article {
   border-width: 1px;
   border-color: white;
   color: #EEFC77;
+  background-image: url("articlebackground.png");
 }
 
 section:after {
@@ -56,10 +61,13 @@ section:after {
 
 
 footer {
+  background-image: url("headerbackground.png");
   background-color: #0391ff;
-  padding: 10px;
+  padding: 25px;
   text-align: center;
   color: #EEFC77;
+  margin-top: 25px;
+
 }
 
 
