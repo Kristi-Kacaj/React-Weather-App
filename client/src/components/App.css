@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+ background-color: #004e8a;
+}
+
+.commentbox {
+  float: right;
+  padding: 5px;
+  width: 25%;
+  background-color: #0391ff;
+  height: 450px;
+ color: white;
+  margin-left: 0px;
+
+
+}
+
+header {
+  background-image: url("headerbackground.png");
+  background-color: #0391ff;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.logo {
+  text-align: left;
+}
+
+nav {
+  float: left;
+  width:74%;
+  margin-right:1%;
+  height: 450px; 
+  background-image: url("navbackground.png");
+  background-color: #0391ff;
+  padding: 5px;
+  color: white;
+  opacity: 0.7;
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: right;
+  padding: 5px;
+  width: 25%;
+  background-color: #0391ff;
+  height: 450px;
+ color: white;
+  background-image: url("articlebackground.png");
+  margin-left: 0px;
+
+  
+
+}
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+footer {
+  background-image: url("headerbackground.png");
+  background-color: #0391ff;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  height: 300px;
+
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+  .App {
+    padding-top: 1rem;
+    margin: 2rem auto;
+}
+
+.App-logo {
+    height: 80px;
+}
+
+.Spin {
+    animation: App-logo-spin infinite 2s linear;
+}
+
+.App-header {
+    text-align: center;
+    background-color: var(--secondary);
+    padding: 20px;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+}
