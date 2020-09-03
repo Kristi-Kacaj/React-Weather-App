@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       <h1>Weather App</h1>
-      </header>
-    </div>
-  );
+import {  Main } from './components/Main/Main';
+import {  Head } from './components/Head/Head';
+import {  Footer } from './components/Footer/Footer';
+
+class App extends Component {
+
+
+  render() {
+    return (
+      <div >
+
+        <Head />
+        <Main />
+        <Footer />
+
+      </div>
+    );
+  }
 }
 
 export default App;
