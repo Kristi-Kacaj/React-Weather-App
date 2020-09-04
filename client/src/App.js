@@ -1,40 +1,23 @@
 import React, { Component } from 'react';
-import './components/App.css';
-import {  Main } from './components';
-import {  Head } from './components';
-import {  Footer } from './components';
 
-import "bootstrap/dist/css/bootstrap.css";
+import './App.css';
 
-
-
-
+import {  Main } from './components/Main/Main';
+import {  Head } from './components/Head/Head';
+import {  Footer } from './components/Footer/Footer';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      comments: [],
-      loading: false
-    };
-  }
 
 
   render() {
-    const loadingSpin = this.state.loading ? "App-logo Spin" : "App-logo";
     return (
-      
-      <div>
+      <div >
 
         <Head />
         <Main />
+        <Footer />
 
-        <Footer/>
-        
       </div>
-
-      
     );
   }
 }
