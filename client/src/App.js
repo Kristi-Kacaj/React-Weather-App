@@ -5,6 +5,7 @@ import './App.css';
 import {  Main } from './components/Main/Main';
 import {  Head } from './components/Head/Head';
 import {  Footer } from './components/Footer/Footer';
+import {  Weather } from './components/Weather/weather';
 
 class App extends Component {
 
@@ -14,7 +15,8 @@ class App extends Component {
       <div >
 
         <Head />
-        <Main />
+        <Main /> <Weather />  
+        
         <Footer />
 
       </div>
