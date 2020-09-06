@@ -8,4 +8,4 @@ const Form = props => (
 	</form>
 );
 
-export default Form;
+export {Form};
