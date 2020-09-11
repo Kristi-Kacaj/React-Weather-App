@@ -57,7 +57,6 @@ class App extends React.Component {
       <div >
 
         <Head />
-        <Main /> 
         <Form getWeather={this.getWeather} />
         <Weather 
         temperature={this.state.temperature} 
@@ -70,7 +69,8 @@ class App extends React.Component {
         icon={this.state.icon}
         error={this.state.error}
         />  
-        
+      <Main /> 
+
         <Footer />
 
       </div>

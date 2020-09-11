@@ -1,4 +1,6 @@
 import React from 'react';
+import './weather.css';
+
 
 const Weather = props => (
 	<div className="weather__info">
