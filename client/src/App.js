@@ -7,7 +7,7 @@ import {  Head } from './components/Head/Head';
 import {  Footer } from './components/Footer/Footer';
 import {  Weather } from './components/Weather/weather';
 import { Form } from './components/Form/form.js';
-
+import {Chart } from './components/Chart/Chart.js';
 
 
 class App extends React.Component {  
@@ -69,7 +69,7 @@ class App extends React.Component {
         icon={this.state.icon}
         error={this.state.error}
         />  
-      <Main /> 
+      <Chart /> 
 
         <Footer />
 
