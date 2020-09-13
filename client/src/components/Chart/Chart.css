@@ -1,0 +1,15 @@
+.chart1 {
+    float: left;
+    width: 50%;
+    height: 470px; 
+    margin-block-end: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    align-items: center;
+    padding-left: 60px;
+    padding-top: 39px;
+
+
+
+  }
+  
