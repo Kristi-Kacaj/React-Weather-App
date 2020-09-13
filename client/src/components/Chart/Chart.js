@@ -1,5 +1,7 @@
 import React, {Component} from 'react' ;
 import {Line} from 'react-chartjs-2';
+import './Chart.css'
+
 
 class Chart extends Component{
   constructor(props){
@@ -22,7 +24,7 @@ class Chart extends Component{
             ],
 
             backgroundColor:[
-              'rgba(255,165,0)',
+              'rgba(255,165,0, 0.8)',
             ]
           }
 
@@ -41,15 +43,15 @@ legendPosition:'right'
   
   render(){
     return(
-      <div className= "chart">
+      <div className= "chart1">
         <Line
           data={this.state.chartData}
           options={{
             title:{
               display:this.props.displayTitle,
               text:'Humidity % this week ',
-              fontSize:25,
-             fontColor: 'orange' 
+              fontSize:30,
+             fontColor: 'Turquoise' 
               
             },
             legend:{
