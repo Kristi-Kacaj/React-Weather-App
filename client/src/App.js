@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './App.css';
 
@@ -8,24 +8,64 @@ import {  Weather } from './components/Weather/weather';
 import { Form } from './components/Form/form.js';
 import { Chart } from './components/Chart/Chart.js';
 import {  Comment } from './components/Comment/Comment.js';
-
-
-
-
-
+import "weather-icons-react";
 
 
 class App extends React.Component {  
-    state = {
+  constructor(){
+    super(); 
+    this.state = {
     temperature: undefined,
+    icon: undefined,
     city: undefined,
-    feels_like: undefined,
     country: undefined,
     humidity: undefined,
     description: undefined,
     error: undefined
+    };
+
+    // weather icons depending on the weather
+    this.weatherIcon = {
+    Thunderstorm: "wi-thunderstorm",
+    Drizzle: "wi-sleet",
+    Rain: "wi-storm-showers",
+    Snow: "wi-snow",
+    Atmosphere: "wi-fog",
+    Clear: "wi-day-sunny",
+    Clouds: "wi-day-fog"
+    };
   }
   
+  //check range of icon and assign to the state 
+  get_WeatherIcon(icons, rangeId) {
+    switch (true) {
+      case rangeId >= 200 && rangeId < 232:
+        this.setState({ icon: icons.Thunderstorm });
+        break;
+      case rangeId >= 300 && rangeId <= 321:
+        this.setState({ icon: icons.Drizzle });
+        break;
+      case rangeId >= 500 && rangeId <= 521:
+        this.setState({ icon: icons.Rain });
+        break;
+      case rangeId >= 600 && rangeId <= 622:
+        this.setState({ icon: icons.Snow });
+        break;
+      case rangeId >= 701 && rangeId <= 781:
+        this.setState({ icon: icons.Atmosphere });
+        break;
+      case rangeId === 800:
+        this.setState({ icon: icons.Clear });
+        break;
+      case rangeId >= 801 && rangeId <= 804:
+        this.setState({ icon: icons.Clouds });
+        break;
+      default:
+        this.setState({ icon: icons.Clouds });
+    }
+  }
+
+
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
@@ -41,9 +81,14 @@ class App extends React.Component {
         humidity: data.main.humidity,
         description: data.weather[0].description,
         wind: data.wind.speed.toFixed(0),
-        icon: data.weather[0].icon,
+        // weatherIcon: data.weather[0].icon,
         error: ""
       });
+      
+      //setting icons to page
+      this.get_WeatherIcon(this.weatherIcon, data.weather[0].id);
+      console.log(data);
+
     } else {
       this.setState({
         temperature: undefined,
@@ -52,14 +97,14 @@ class App extends React.Component {
         humidity: undefined,
         description: undefined,
         wind: undefined,
-        icon: undefined,        
-        error: "Please enter the values."
+        weatherIcon: undefined,        
+        error: "Please enter the missing values."
       });
-    }
-  }
+    };
+  };
   render() {
     return (
-      <div >
+      <div className='App' >
 
         <Head />
         <Form getWeather={this.getWeather} />
@@ -71,7 +116,7 @@ class App extends React.Component {
         country={this.state.country}
         description={this.state.description}
         wind={this.state.wind}
-        icon={this.state.icon}
+        weatherIcon={this.state.icon}
         error={this.state.error}
         />  
         <Chart/>
