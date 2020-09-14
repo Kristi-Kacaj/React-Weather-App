@@ -53,3 +53,8 @@ footer {
   margin-top: 820px;
 
 }
+
+.App {
+  padding: 5px;
+  /* background-image: url("images/navbackground.png"); */
+}
