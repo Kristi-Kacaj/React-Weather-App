@@ -1,4 +1,6 @@
 import React from 'react';
+import './weather.css';
+
 
 const Weather = props => (
 	<div className="weather__info">
@@ -9,11 +11,11 @@ const Weather = props => (
 	 }
 	 { 	
 	 	props.temperature && <p className="weather__key"> Temperature: 
-	 		<span className="weather__value"> { props.temperature }	</span>
+	 		<span className="weather__value"> { props.temperature }&deg;</span>
 	 	</p> 
 	 }
 	 { 	
-	 	props.description && <p className="weather__key"> Icon: 
+	 	props.description && <p className="weather__key">  
 	 		<span className="weather__value"> { props.icon } </span>
 	 </p> 
 	 }
