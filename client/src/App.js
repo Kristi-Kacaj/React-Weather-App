@@ -12,9 +12,15 @@ import "weather-icons-react";
 
 
 class App extends React.Component {  
+
+    state = {
+      latitude:undefined,
+      longitude:undefined,
+
   constructor(){
     super(); 
     this.state = {
+
     temperature: undefined,
     icon: undefined,
     city: undefined,
@@ -35,7 +41,52 @@ class App extends React.Component {
     Clouds: "wi-day-fog"
     };
   }
+
+  componentDidMount = async ()=>{
+    console.log("component mounted")
+
+    if(navigator.geolocation){
+       navigator.geolocation.getCurrentPosition(success=>{
+         console.log(success)
+         const {latitude, longitude} = success.coords
+         this.setState({latitude, longitude})
+         this.getWeatherAuto(latitude, longitude)
+
+       })
+    }
+  }
+
+  getWeatherAuto = async (lat,lon)=>{
+    const API_KEY = "011d246d500f6dadbdd8b82cb9613fc3";
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+    const data = await api_call.json();
+    if (true) {
+      this.setState({
+        temperature: data.main.temp.toFixed(0),
+        city: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        wind: data.wind.speed.toFixed(0),
+        icon: data.weather[0].icon,
+        error: ""
+      });
+    } else {
+      this.setState({
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        description: undefined,
+        wind: undefined,
+        icon: undefined,        
+        error: "Please enter the values."
+      });
+    }
+  }
+
   
+  getWeatherForm = async (e) => {
   //check range of icon and assign to the state 
   get_WeatherIcon(icons, rangeId) {
     switch (true) {
@@ -104,7 +155,10 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className='App' >
+      <div >
+        <h1>{this.state.latitude} , {this.state.longitude}</h1>
+
+        <div className='App' >
 
         <Head />
         <Form getWeather={this.getWeather} />
@@ -122,7 +176,7 @@ class App extends React.Component {
         <Chart/>
         <Comment/>
          <Footer />
-
+        </div>
       </div>
     );
   }
