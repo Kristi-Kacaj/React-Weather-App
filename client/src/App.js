@@ -41,7 +41,7 @@ class App extends React.Component {
     Clear: "wi-day-sunny",
     Clouds: "wi-day-fog"
     };
-  }
+  };
 
   componentDidMount = async ()=>{
     console.log("component mounted")
@@ -55,7 +55,7 @@ class App extends React.Component {
 
        })
     }
-  }
+  };
 
   getWeatherAuto = async (lat,lon)=>{
     const API_KEY = "011d246d500f6dadbdd8b82cb9613fc3";
@@ -84,7 +84,7 @@ class App extends React.Component {
         error: "Please enter the values."
       });
     }
-  }
+  };
 
   getWeather = async (e) => {
     e.preventDefault();
@@ -148,7 +148,9 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
-}
+    }
+};
 
-export default App;
+
+
+export default { App };
