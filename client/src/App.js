@@ -9,29 +9,25 @@ import { Form } from './components/Form/form.js';
 import { Chart } from './components/Chart/Chart.js';
 import {  Comment } from './components/Comment/Comment.js';
 
-
-
 class App extends React.Component {  
-
-
     
-  constructor(){
-    super(); 
-    this.state = {
-
-    temperature: undefined,
-    icon: undefined,
-    city: undefined,
-    country: undefined,
-    humidity: undefined,
-    description: undefined,
-    error: undefined,
-    latitude:undefined,
-    longitude:undefined,
-    comment: [],
-    addComment:{
-      user_name: 'User',
-      comments: 'test',
+      constructor(props){
+        super(props); 
+        this.state = {
+          
+          temperature: undefined,
+          icon: undefined,
+          city: undefined,
+          country: undefined,
+          humidity: undefined,
+          description: undefined,
+          error: undefined,
+          latitude:undefined,
+          longitude:undefined,
+          comment: [],
+          addComment:{
+          user_name: 'User',
+          comments: 'test',
     }
     };
 
@@ -89,38 +85,6 @@ class App extends React.Component {
       });
     }
   };
-
-  
-  // getWeatherForm = async (e) => {
-  // //check range of icon and assign to the state 
-  // get_WeatherIcon(icons, rangeId) {
-  //   switch (true) {
-  //     case rangeId >= 200 && rangeId < 232:
-  //       this.setState({ icon: icons.Thunderstorm });
-  //       break;
-  //     case rangeId >= 300 && rangeId <= 321:
-  //       this.setState({ icon: icons.Drizzle });
-  //       break;
-  //     case rangeId >= 500 && rangeId <= 521:
-  //       this.setState({ icon: icons.Rain });
-  //       break;
-  //     case rangeId >= 600 && rangeId <= 622:
-  //       this.setState({ icon: icons.Snow });
-  //       break;
-  //     case rangeId >= 701 && rangeId <= 781:
-  //       this.setState({ icon: icons.Atmosphere });
-  //       break;
-  //     case rangeId === 800:
-  //       this.setState({ icon: icons.Clear });
-  //       break;
-  //     case rangeId >= 801 && rangeId <= 804:
-  //       this.setState({ icon: icons.Clouds });
-  //       break;
-  //     default:
-  //       this.setState({ icon: icons.Clouds });
-  //   };
-  // };
-
 
   getWeather = async (e) => {
     e.preventDefault();

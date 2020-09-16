@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   database: 'schema',
   user: 'root',
-  password: 'root',
+  password: 'Vitamins22',
 
 });
 
@@ -65,8 +65,8 @@ connection.query(SELECT_ALL_COMMENTS_QUERY, (err, results) =>{
 }
 });
 });
-app.listen(5000, () =>{
-  console.log(`Comments server listenig on portal 5000`)
+app.listen(8000, () =>{
+  console.log(`Comments server listenig on portal 8000`)
 });
 
 

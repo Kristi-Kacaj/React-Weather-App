@@ -38,7 +38,7 @@ class CommentForm extends Component {
     ).catch(err=>console.error("FETCH ERROR!:",err))
     }
   getComment = c => {
-    fetch('http://localhost:5000/comments')
+    fetch('http://localhost:8000/comments')
     .then(response => response.json())
     .then(({data}) =>{
       console.log(data)
@@ -49,12 +49,24 @@ class CommentForm extends Component {
     
   }
 
-
+  addComment = c => {
+    fetch('http://localhost:5000/comments/add')
+    .then(response => response.json())
+    .then(({data}) =>{
+      console.log(data)
+      this.setState({allComments: data})
+    })
+  
+  .catch(err =>console.error(err))
+    
+  }
 
   
   componentDidMount(){
     this.getComment()
   }
+
+  renderComment =({user_name, comment}) => <div key={user_name}>{comment}</div>
   
   render() {
     return (
