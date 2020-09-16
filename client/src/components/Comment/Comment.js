@@ -1,11 +1,19 @@
 import React from 'react';
-import './Comment.css'
+import CommentForm from './CommentForm';
+
 
 const Comment= () => {
 
+    
+
     return (
 <div className="Comment">
-Comment Section
+<div style={ Comment.commentBox }> 
+
+      <CommentForm />
+      
+</div>
+
 
 </div>
 
@@ -13,10 +21,5 @@ Comment Section
     );
 
 }
-
-
-
-
-
 
 export {Comment};
